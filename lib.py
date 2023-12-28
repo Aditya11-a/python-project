@@ -14,7 +14,7 @@ def listDatabases():
     dbArr = []
     for i in dbList:
         for j in i:
-            dbArr.append(j+'/n')
+            dbArr.append(j)
     return (dbArr)
 
 
@@ -29,11 +29,12 @@ def listTables():
 
 
 def createDatabase(dbName):
-    sql.execute("CREATE DATABASE;"+dbName)
+    sql.execute("CREATE DATABASE "+dbName)
 
 
 def selectDatabase(dbName):
     sql.execute("USE "+dbName)
+    print(dbName)
 
 
 constraints = ["NOT NULL", "DEFAULT", "UNIQUE",
